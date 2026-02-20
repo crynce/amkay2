@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import {
   Box,
   Briefcase,
@@ -68,13 +67,11 @@ const clientList = [
 export default function Clients() {
   return (
     <div className="clients-page">
-      <Helmet>
-        <title>Our Clients | Amkay Industries</title>
-        <meta
-          name="description"
-          content="Trusted by leading industry giants across automotive and industrial manufacturing sectors."
-        />
-      </Helmet>
+      <title>Our Clients | Amkay Industries</title>
+      <meta
+        name="description"
+        content="Trusted by leading industry giants across automotive and industrial manufacturing sectors."
+      />
 
       {/* Page Header */}
       <section className="page-header">

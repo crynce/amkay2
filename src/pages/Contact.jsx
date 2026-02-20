@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import { Mail, Phone, MapPin, Send, ShieldCheck } from "lucide-react";
 import "./Contact.css";
 
@@ -34,13 +33,11 @@ export default function Contact() {
 
   return (
     <div className="contact-page">
-      <Helmet>
-        <title>Contact Us | Amkay Industries</title>
-        <meta
-          name="description"
-          content="Reach out to Amkay Industries for your precision manufacturing requirements. Let's build quality together."
-        />
-      </Helmet>
+      <title>Contact Us | Amkay Industries</title>
+      <meta
+        name="description"
+        content="Reach out to Amkay Industries for your precision manufacturing requirements. Let's build quality together."
+      />
 
       {/* Split Layout Header / Form */}
       <section className="contact-hero">

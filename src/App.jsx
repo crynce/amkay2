@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -16,34 +15,32 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <HelmetProvider>
-      <Router>
-        <ScrollToTop />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            minHeight: "100vh",
-          }}
-        >
-          <Navbar />
-          <main style={{ flex: 1, paddingTop: "100px" }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/capabilities" element={<Capabilities />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/quality" element={<Quality />} />
-              <Route path="/clients" element={<Clients />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </main>
-          <Footer />
-          <FloatingWhatsApp />
-          <BackToTop />
-        </div>
-      </Router>
-    </HelmetProvider>
+    <Router>
+      <ScrollToTop />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
+      >
+        <Navbar />
+        <main style={{ flex: 1, paddingTop: "100px" }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/capabilities" element={<Capabilities />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/quality" element={<Quality />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+        <FloatingWhatsApp />
+        <BackToTop />
+      </div>
+    </Router>
   );
 }
 

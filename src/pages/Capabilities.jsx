@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Settings, Zap, Building2, CheckCircle } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import "./Capabilities.css";
 
 const capabilities = [
@@ -53,13 +52,11 @@ const photos = [
 export default function Capabilities() {
   return (
     <div className="capabilities-page">
-      <Helmet>
-        <title>Facilities & Capabilities | Amkay Industries</title>
-        <meta
-          name="description"
-          content="Explore Amkay Industries' manufacturing capabilities including CNC machining, precise turning, and injection moulding spanning across a 10,000 Sq. Ft. facility."
-        />
-      </Helmet>
+      <title>Facilities & Capabilities | Amkay Industries</title>
+      <meta
+        name="description"
+        content="Explore Amkay Industries' manufacturing capabilities including CNC machining, precise turning, and injection moulding spanning across a 10,000 Sq. Ft. facility."
+      />
 
       {/* Page Header */}
       <section className="page-header">
