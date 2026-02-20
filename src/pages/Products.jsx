@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+
 import "./Products.css";
 
 const categories = [
@@ -80,13 +80,13 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      <Helmet>
+      <>
         <title>Our Products | Amkay Industries</title>
         <meta
           name="description"
           content="View our extensive portfolio of precision turned components, automotive machined parts, and aluminum heat sinks."
         />
-      </Helmet>
+      </>
 
       {/* Page Header */}
       <section className="page-header">

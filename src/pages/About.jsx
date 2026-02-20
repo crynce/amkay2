@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import { Target, Eye } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+
 import "./About.css";
 
 export default function About() {
   return (
     <div className="about-page">
-      <Helmet>
+      <>
         <title>About Us | Amkay Industries</title>
         <meta
           name="description"
           content="Established in 2007, Amkay Industries provides precision manufacturing & engineering excellence."
         />
-      </Helmet>
+      </>
 
       {/* Page Header */}
       <section className="page-header">

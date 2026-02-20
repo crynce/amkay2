@@ -7,7 +7,6 @@ import {
   GitBranch,
   ArrowRight,
 } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import "./Quality.css";
 
 const instruments = [
@@ -48,13 +47,13 @@ const processFlow = [
 export default function Quality() {
   return (
     <div className="quality-page">
-      <Helmet>
+      <>
         <title>Quality Assurance | Amkay Industries</title>
         <meta
           name="description"
           content="Discover Amkay Industries' rigorous quality policy and state-of-the-art measuring instruments ensuring zero defects in all precision components."
         />
-      </Helmet>
+      </>
 
       {/* Page Header */}
       <section className="page-header">

@@ -9,8 +9,9 @@
   background: transparent;
 }
 
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.9);
+.navbar.scrolled,
+.navbar.navbar-dark-text {
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm);
@@ -34,8 +35,14 @@
   font-family: var(--font-accent);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: var(--white);
   letter-spacing: -0.5px;
+}
+
+/* Scrolled state or non-home pages (dark text) */
+.navbar.scrolled .logo-text,
+.navbar.navbar-dark-text .logo-text {
+  color: var(--primary-dark);
 }
 
 .desktop-nav {
@@ -62,16 +69,30 @@
   font-family: var(--font-primary);
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--gray-700);
+  color: var(--white); /* Default to white for transparent home hero */
   text-decoration: none;
   transition: color 0.2s;
   padding: 0.5rem 0;
   position: relative;
 }
 
+/* Scrolled state or non-home pages (dark text) */
+.navbar.scrolled .nav-link,
+.navbar.navbar-dark-text .nav-link {
+  color: var(--gray-700);
+}
+
 .nav-link:hover,
 .nav-link.active {
-  color: var(--primary-dark);
+  color: var(--accent) !important;
+}
+
+/* Scrolled/Non-home active states */
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active,
+.navbar.navbar-dark-text .nav-link:hover,
+.navbar.navbar-dark-text .nav-link.active {
+  color: var(--primary-dark) !important;
 }
 
 .nav-link::after {
@@ -111,9 +132,15 @@
   display: block;
   background: transparent;
   border: none;
-  color: var(--primary-dark);
+  color: var(--white);
   cursor: pointer;
   padding: 0.5rem;
+}
+
+/* Scrolled state or non-home pages (dark text) */
+.navbar.scrolled .mobile-toggle,
+.navbar.navbar-dark-text .mobile-toggle {
+  color: var(--primary-dark);
 }
 
 @media (min-width: 1024px) {

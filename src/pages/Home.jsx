@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
-import { Helmet } from "react-helmet-async";
+
 import "./Home.css";
 
 const fadeUpVariant = {
@@ -72,13 +72,13 @@ const clients = [
 export default function Home() {
   return (
     <div className="home-page">
-      <Helmet>
+      <>
         <title>Amkay Industries | Precision Manufacturing Quality</title>
         <meta
           name="description"
           content="ISO 9001:2015 certified manufacturing company based in Gurugram, India, specializing in turned components, CNC machining, and plastic injection moulding."
         />
-      </Helmet>
+      </>
 
       {/* 1. Hero Section */}
       <section className="hero">

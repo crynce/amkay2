@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Navbar.css";
@@ -17,6 +17,8 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   // Handle scroll for sticky transparent/solid effect
   useEffect(() => {
@@ -28,7 +30,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <header
+      className={`navbar ${scrolled ? "scrolled" : ""} ${!isHome && !scrolled ? "navbar-dark-text" : ""}`}
+    >
       <div className="container nav-container">
         {/* Logo */}
         <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
