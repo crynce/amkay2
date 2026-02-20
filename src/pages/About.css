@@ -1,0 +1,253 @@
+.about-page {
+  padding-top: 80px;
+}
+
+.page-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--secondary-dark)
+  );
+  color: var(--white);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--gray-200);
+  margin-bottom: 2rem;
+}
+
+.est-badge {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.about-split {
+  display: grid;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .about-split {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: var(--gray-700);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.founder-box {
+  background-color: var(--white);
+  border-left: 4px solid var(--accent);
+  padding: 2rem;
+  border-radius: 0 12px 12px 0;
+  box-shadow: var(--shadow-sm);
+  margin-top: 3rem;
+}
+
+.founder-box h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.vision-card {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  border-bottom: 4px solid var(--primary-dark);
+}
+
+.vision-card.mt-4 {
+  margin-top: 2rem;
+}
+
+.vision-icon {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.vision-card h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.vision-card blockquote {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--gray-700);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.motto-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* Base Org Chart Tree Styles */
+.org-tree-wrapper {
+  overflow-x: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+.tree li::before,
+.tree li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid var(--primary-dark);
+  width: 50%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid var(--primary-dark);
+}
+
+/*We need to remove left-right connectors from elements without any siblings*/
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child {
+  padding-top: 0;
+}
+
+/*Remove left connector from first child and right connector from last child*/
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before {
+  border-right: 2px solid var(--primary-dark);
+  border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid var(--primary-dark);
+  width: 0;
+  height: 20px;
+  transform: translateX(-1px); /* align */
+}
+
+.tree li .node {
+  border: 1px solid var(--gray-200);
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--gray-700);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  display: inline-block;
+  border-radius: 8px;
+  transition: all 0.5s;
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  min-width: 140px;
+}
+
+/* Node Specific Styles */
+.node.head-node {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+  min-width: 250px;
+}
+
+.node.head-node strong {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.node.head-node span {
+  font-size: 0.9rem;
+  color: var(--gray-200);
+}
+
+.node.dept-node {
+  background-color: var(--gray-50);
+  color: var(--primary-dark);
+  font-weight: 600;
+  border: 2px solid var(--accent);
+}
+
+.node.sub-node {
+  font-size: 0.85rem;
+  border-style: dashed;
+}
+
+/*Hover effect for the lineage*/
+.tree li .node:hover,
+.tree li .node:hover + ul li .node {
+  background: rgba(232, 163, 23, 0.1);
+  border-color: var(--accent);
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 991px) {
+  .org-tree-wrapper {
+    justify-content: flex-start;
+  }
+}
