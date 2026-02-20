@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Settings, Zap, Building2, CheckCircle } from "lucide-react";
 import { Helmet } from "react-helmet-async";

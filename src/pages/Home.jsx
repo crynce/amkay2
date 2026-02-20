@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import {
@@ -80,58 +81,84 @@ export default function Home() {
         />
       </Helmet>
 
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section - V2 Modernized */}
       <section className="hero">
-        <div className="hero-split hero-left">
+        <div className="hero-container text-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+            }}
+            className="hero-content"
           >
-            <h1 className="hero-heading">AMKAY INDUSTRIES</h1>
-            <p className="hero-tagline">
-              Quality Manufacturing at Economical Cost
-            </p>
-            <div className="hero-badge">
-              <ShieldCheck size={20} className="badge-icon" />
+            <motion.div variants={fadeUpVariant} className="hero-badge-modern">
+              <ShieldCheck size={18} />
               <span>ISO 9001:2015 Certified Enterprise</span>
-            </div>
-            <div className="hero-ctas">
-              <Link to="/products" className="btn-primary">
-                Explore Products
+            </motion.div>
+
+            <motion.h1 variants={fadeUpVariant} className="hero-heading">
+              Precision Engineering
+              <br />
+              <span className="text-gradient">Redefined.</span>
+            </motion.h1>
+
+            <motion.p variants={fadeUpVariant} className="hero-tagline">
+              Delivering high-accuracy turned components, CNC machining, and
+              premium injection moulding with uncompromising quality at
+              economical costs.
+            </motion.p>
+
+            <motion.div
+              variants={fadeUpVariant}
+              className="hero-ctas justify-center"
+            >
+              <Link to="/products" className="btn-primary btn-lg">
+                Explore Portfolio
               </Link>
-              <Link to="/contact" className="btn-secondary">
-                Get in Touch
+              <Link to="/contact" className="btn-secondary btn-lg">
+                Request a Quote
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
-        <div className="hero-split hero-right">
-          <div className="hero-stats">
-            <div className="stat-card">
-              <h3>
+
+        {/* Bento Box Stats Overlay */}
+        <div className="container relative z-10 hero-bento-offset">
+          <motion.div
+            className="bento-grid"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <div className="bento-card bento-stat">
+              <div className="stat-value">
                 <CountUp end={30} duration={2} enableScrollSpy />+
-              </h3>
-              <p>Years Experience</p>
+              </div>
+              <div className="stat-label">
+                Years of Manufacturing Excellence
+              </div>
             </div>
-            <div className="stat-card">
-              <h3>
+            <div className="bento-card bento-stat">
+              <div className="stat-value">
                 <CountUp
                   end={10000}
                   separator=","
                   duration={2}
                   enableScrollSpy
                 />
-              </h3>
-              <p>Sq. Ft. Facility</p>
+              </div>
+              <div className="stat-label">Sq. Ft. Advanced Facility</div>
             </div>
-            <div className="stat-card">
-              <h3>
-                <CountUp end={125} duration={2} enableScrollSpy />
-              </h3>
-              <p>KVA Power</p>
+            <div className="bento-card bento-dark">
+              <h3 className="text-accent mb-2">Zero Defects</h3>
+              <p className="text-gray-300 text-sm">
+                Rigorous QA process ensuring flawless delivery across pan-India
+                automotive networks.
+              </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

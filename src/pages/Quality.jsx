@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   ShieldCheck,
   Ruler,
@@ -8,6 +7,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import "./Quality.css";
 
 const instruments = [
