@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, ShieldCheck } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  ShieldCheck,
+  ExternalLink,
+  PhoneCall,
+  MailOpen,
+} from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 import "./Contact.css";
 
 export default function Contact() {
@@ -20,7 +30,22 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // In a real application, submit the formData to backend.
-    alert("Thank you for contacting us! We will get back to you shortly.");
+    toast.success(
+      "Thank you for contacting us! We will get back to you shortly.",
+      {
+        style: {
+          borderRadius: "10px",
+          background: "var(--primary-dark)",
+          color: "var(--white)",
+          border: "1px solid var(--accent)",
+        },
+        iconTheme: {
+          primary: "var(--accent)",
+          secondary: "var(--white)",
+        },
+        duration: 4000,
+      },
+    );
     setFormData({
       name: "",
       company: "",
@@ -33,6 +58,7 @@ export default function Contact() {
 
   return (
     <div className="contact-page">
+      <Toaster position="bottom-center" reverseOrder={false} />
       <title>Contact Us | Amkay Industries</title>
       <meta
         name="description"
@@ -189,6 +215,14 @@ export default function Contact() {
                 Khasra No. 735–736, Gali No.-03, Basai Enclave Part-II,
                 Gurugram, Haryana, India
               </p>
+              <a
+                href="https://www.google.com/maps?q=28.4515641,76.9918864"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="info-cta"
+              >
+                Get Directions <ExternalLink size={16} />
+              </a>
             </motion.div>
 
             <motion.div
@@ -207,6 +241,9 @@ export default function Contact() {
                 <br />
                 +91 98110 XXXXX
               </p>
+              <a href="tel:+918527927333" className="info-cta">
+                Call Now <PhoneCall size={16} />
+              </a>
             </motion.div>
 
             <motion.div
@@ -225,6 +262,9 @@ export default function Contact() {
                 <br />
                 sales@amkayindustries.com
               </p>
+              <a href="mailto:info@amkayindustries.com" className="info-cta">
+                Send Email <MailOpen size={16} />
+              </a>
             </motion.div>
           </div>
         </div>

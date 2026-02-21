@@ -24,16 +24,14 @@ export default function Navbar() {
   // Handle scroll for sticky transparent/solid effect
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 0.5 * 16);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header
-      className={`navbar ${scrolled ? "scrolled" : ""}} navbar-dark-text`}
-    >
+    <header className={`navbar ${scrolled ? "scrolled" : ""} navbar-dark-text`}>
       <div className=" nav-container">
         {/* Logo */}
         <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
