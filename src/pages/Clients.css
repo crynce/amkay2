@@ -1,5 +1,9 @@
 /* Clients.css */
 
+.clients-page {
+  padding-top: 5px;
+}
+
 .client-stats-bar {
   background-color: var(--secondary-dark);
   color: var(--white);

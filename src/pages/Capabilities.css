@@ -1,4 +1,7 @@
 /* Capabilities.css */
+.capabilities-page {
+  padding-top: 5px;
+}
 
 .cap-layout {
   display: grid;

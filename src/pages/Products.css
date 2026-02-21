@@ -47,6 +47,9 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+.products-page {
+  padding-top: 5px;
+}
 
 .product-card {
   background: var(--white);

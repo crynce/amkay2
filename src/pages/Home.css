@@ -137,10 +137,13 @@
   transition:
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.4s ease;
+  transform: translateZ(
+    0
+  ); /* Forces hardware acceleration to fix grid paint glitches */
 }
 
 .bento-card:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-4px) scale(1.01) translateZ(0);
   box-shadow: var(--shadow-lg);
 }
 
@@ -172,6 +175,7 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
     var(--shadow-lg); /* Inner glow */
+  height: 100%;
 }
 
 .stat-value {
@@ -471,41 +475,88 @@
   color: var(--gray-200);
 }
 
-/* Marquee */
+/* Marquee Section Enhancement */
 .client-ticker-section {
-  padding: 4rem 0;
-  border-bottom: 1px solid var(--gray-100);
+  padding: 5rem 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.badge-subtle {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background-color: rgba(79, 70, 229, 0.1);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
 
 .ticker-title {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
   font-family: var(--font-accent);
-  color: var(--gray-700);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  color: var(--primary-dark);
+  font-size: 2.25rem;
+  font-weight: 700;
 }
 
-.client-brand {
-  padding: 0 3rem;
+.marquee-wrapper {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.client-brand-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.75rem;
+  margin: 0 1.5rem; /* Gap between cards */
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 100px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  cursor: default;
+  margin-top: 10px;
+}
+
+.client-brand-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.client-brand-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--gray-400);
+  transition: color 0.3s;
+}
+
+.client-brand-card:hover .client-brand-icon {
+  color: var(--accent);
 }
 
 .client-name {
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: var(--font-accent);
-  color: var(--gray-400); /* light gray */
-  filter: grayscale(100%);
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  color: var(--gray-700);
   transition: all 0.3s;
+  white-space: nowrap;
 }
 
-.client-brand:hover .client-name {
+.client-brand-card:hover .client-name {
   color: var(--primary-dark);
-  filter: grayscale(0%);
 }
 
 /* CTA Banner */
