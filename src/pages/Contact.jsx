@@ -186,7 +186,8 @@ export default function Contact() {
               </div>
               <h3>Visit Us</h3>
               <p>
-                Plot No. 123, Sector 5, IMT Manesar
+                Khasra No. 735–736, Gali No.-03, Basai Enclave Part-II,
+                Gurugram, Haryana
                 <br />
                 Gurugram, Haryana, India
               </p>
