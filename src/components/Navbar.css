@@ -1,24 +1,30 @@
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1200px;
   z-index: 1000;
-  transition: all 0.3s ease;
-  padding: 1rem 0;
-  background: transparent;
-}
-
-.navbar.scrolled,
-.navbar.navbar-dark-text {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0.85rem 1.75rem;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 100px; /* Pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: var(--shadow-sm);
-  padding: 0.75rem 0;
 }
 
-/* Adjust text color based on scroll if needed, but going with primary color is safe */
+.navbar.scrolled {
+  top: 1rem;
+  width: 92%;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(200, 200, 200, 0.2);
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;

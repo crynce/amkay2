@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`navbar ${scrolled ? "scrolled" : ""} ${!isHome && !scrolled ? "navbar-dark-text" : ""}`}
+      className={`navbar ${scrolled ? "scrolled" : ""}} navbar-dark-text`}
     >
       <div className="container nav-container">
         {/* Logo */}

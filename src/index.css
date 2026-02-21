@@ -1,24 +1,41 @@
 :root {
-  /* Colors */
-  --primary-dark: #0f2a4a;
-  --secondary-dark: #1b3a5c;
-  --accent: #e8a317;
-  --accent-hover: #d19114;
-  --gray-50: #f7fafc;
-  --gray-100: #edf2f7;
-  --gray-200: #e2e8f0;
-  --gray-700: #4a5568;
+  /* V3 Ultra-Modern Colors */
+  --primary-dark: #09090b; /* Deep Zinc for high contrast headings */
+  --secondary-dark: #18181b;
+  --accent: #4f46e5; /* Premium Electric Indigo */
+  --accent-hover: #4338ca;
+
+  /* Neutral palette - Pure white and cool grays */
   --white: #ffffff;
+  --gray-50: #fafafa; /* Very subtle pearl for section backgrounds */
+  --gray-100: #f4f4f5;
+  --gray-200: #e4e4e7;
+  --gray-300: #d4d4d8;
+  --gray-700: #52525b; /* Readable body text */
+  --gray-900: #18181b;
 
   /* Typography */
   --font-primary: "Inter", sans-serif;
   --font-accent: "Space Grotesk", sans-serif;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  /* Soft, multi-layered XL shadows for glassmorphism */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+  /* Modern Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -31,11 +48,12 @@ body {
   font-family: var(--font-primary);
   color: var(--gray-700);
   background-color: var(--white);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Typography Refinements */
 h1,
 h2,
 h3,
@@ -43,9 +61,10 @@ h4,
 h5,
 h6 {
   color: var(--primary-dark);
-  font-family: var(--font-accent);
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: var(--font-primary);
+  font-weight: 600; /* Softer, elegant bold */
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 a {

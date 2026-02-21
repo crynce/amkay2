@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   ShieldCheck,
   Ruler,
@@ -7,6 +6,8 @@ import {
   GitBranch,
   ArrowRight,
 } from "lucide-react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import "./Quality.css";
 
 const instruments = [
@@ -47,13 +48,11 @@ const processFlow = [
 export default function Quality() {
   return (
     <div className="quality-page">
-      <>
-        <title>Quality Assurance | Amkay Industries</title>
-        <meta
-          name="description"
-          content="Discover Amkay Industries' rigorous quality policy and state-of-the-art measuring instruments ensuring zero defects in all precision components."
-        />
-      </>
+      <title>Quality Assurance | Amkay Industries</title>
+      <meta
+        name="description"
+        content="Discover Amkay Industries' rigorous quality policy and state-of-the-art measuring instruments ensuring zero defects in all precision components."
+      />
 
       {/* Page Header */}
       <section className="page-header">

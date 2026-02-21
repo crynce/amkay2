@@ -49,7 +49,8 @@ export default function Footer() {
             <li>
               <MapPin size={18} />
               <span>
-                Plot No. 123, Sector 5, IMT Manesar, Gurugram, Haryana, India
+                Khasra No. 735–736, Gali No.-03, Basai Enclave Part-II,
+                Gurugram, Haryana
               </span>
             </li>
             <li>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import "./Products.css";
 
 const categories = [
@@ -80,13 +79,11 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      <>
-        <title>Our Products | Amkay Industries</title>
-        <meta
-          name="description"
-          content="View our extensive portfolio of precision turned components, automotive machined parts, and aluminum heat sinks."
-        />
-      </>
+      <title>Our Products | Amkay Industries</title>
+      <meta
+        name="description"
+        content="View our extensive portfolio of precision turned components, automotive machined parts, and aluminum heat sinks."
+      />
 
       {/* Page Header */}
       <section className="page-header">

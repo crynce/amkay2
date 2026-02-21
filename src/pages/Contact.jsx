@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-
 import { Mail, Phone, MapPin, Send, ShieldCheck } from "lucide-react";
 import "./Contact.css";
 
@@ -34,13 +33,11 @@ export default function Contact() {
 
   return (
     <div className="contact-page">
-      <>
-        <title>Contact Us | Amkay Industries</title>
-        <meta
-          name="description"
-          content="Reach out to Amkay Industries for your precision manufacturing requirements. Let's build quality together."
-        />
-      </>
+      <title>Contact Us | Amkay Industries</title>
+      <meta
+        name="description"
+        content="Reach out to Amkay Industries for your precision manufacturing requirements. Let's build quality together."
+      />
 
       {/* Split Layout Header / Form */}
       <section className="contact-hero">
@@ -189,7 +186,8 @@ export default function Contact() {
               </div>
               <h3>Visit Us</h3>
               <p>
-                Plot No. 123, Sector 5, IMT Manesar
+                Khasra No. 735–736, Gali No.-03, Basai Enclave Part-II,
+                Gurugram, Haryana
                 <br />
                 Gurugram, Haryana, India
               </p>
