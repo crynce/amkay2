@@ -25,7 +25,7 @@ function App() {
         }}
       >
         <Navbar />
-        <main style={{ flex: 1, paddingTop: "100px" }}>
+        <main style={{ flex: 1, paddingTop: "80px" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
