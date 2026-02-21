@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem 10rem; /* Tighter top padding, large bottom for bento */
+  padding: 2rem 2rem 10rem; /* Tighter top padding, large bottom for bento */
   background: radial-gradient(
     circle at top center,
     var(--gray-50) 0%,
