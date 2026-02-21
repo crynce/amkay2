@@ -187,8 +187,6 @@ export default function Contact() {
               <h3>Visit Us</h3>
               <p>
                 Khasra No. 735–736, Gali No.-03, Basai Enclave Part-II,
-                Gurugram, Haryana
-                <br />
                 Gurugram, Haryana, India
               </p>
             </motion.div>
