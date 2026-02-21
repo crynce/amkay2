@@ -12,8 +12,8 @@ export default function Footer() {
         <div className="footer-col">
           <div className="footer-logo">AMKAY</div>
           <p className="footer-desc">
-            Quality Manufacturing at Economical Cost. ISO 9001:2015 certified
-            precision manufacturing company.
+            Quality Manufacturing at Economical Cost.
+            <br />A Precision manufacturing company.
           </p>
           <div className="footer-iso">
             <strong>ISO 9001:2015</strong> Certified Company
@@ -59,7 +59,7 @@ export default function Footer() {
             </li>
             <li>
               <Mail size={18} />
-              <span>info@amkayindustries.com</span>
+              <span>amkay_2006@yahoo.co.in</span>
             </li>
           </ul>
         </div>

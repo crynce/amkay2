@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Navbar.css";
+import { createPortal } from "react-dom";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -63,48 +64,77 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           className="mobile-toggle"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle navigation"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open navigation"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          <Menu size={28} />
         </button>
       </div>
-
       {/* Mobile Nav Drawer */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="mobile-nav"
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-          >
-            <ul className="mobile-nav-list">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <NavLink
-                    to={link.path}
-                    className="mobile-nav-link"
-                    onClick={() => setIsOpen(false)}
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <motion.div
+                key="backdrop"
+                className="mobile-backdrop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setIsOpen(false)}
+              />
+              <motion.div
+                key="drawer"
+                className="mobile-nav"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "tween", duration: 0.3 }}
+              >
+                <div className="mobile-nav-header">
+                  <span
+                    className="logo-text"
+                    style={{ color: "var(--primary-dark)" }}
                   >
-                    {link.name}
-                  </NavLink>
-                </li>
-              ))}
-              <li>
-                <Link
-                  to="/contact"
-                  className="btn-cta mobile-cta"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Request a Quote
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                    AMKAY
+                  </span>
+                  <button
+                    className="mobile-close-btn"
+                    onClick={() => setIsOpen(false)}
+                    aria-label="Close navigation"
+                  >
+                    <X size={28} />
+                  </button>
+                </div>
+                <ul className="mobile-nav-list">
+                  {navLinks.map((link) => (
+                    <li key={link.name}>
+                      <NavLink
+                        to={link.path}
+                        className="mobile-nav-link"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.name}
+                      </NavLink>
+                    </li>
+                  ))}
+                  <li>
+                    <Link
+                      to="/contact"
+                      className="btn-cta mobile-cta"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Request a Quote
+                    </Link>
+                  </li>
+                </ul>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>,
+        document.body,
+      )}
     </header>
   );
 }

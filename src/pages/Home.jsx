@@ -10,6 +10,7 @@ import {
   ArrowRight,
   CheckCircle,
   DollarSign,
+  Building2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
@@ -342,22 +343,32 @@ export default function Home() {
       </section>
 
       {/* 7. Client Ticker Marquee */}
-      <section className="section client-ticker-section">
+      <section className="section client-ticker-section bg-light">
         <div className="container">
-          <h3 className="ticker-title">Trusted By Industry Leaders</h3>
+          <div className="text-center mb-10">
+            <span className="badge-subtle">Our Partners</span>
+            <h2 className="ticker-title">Trusted By Industry Leaders</h2>
+          </div>
         </div>
-        <Marquee
-          gradient={false}
-          speed={50}
-          pauseOnHover={true}
-          className="client-marquee"
-        >
-          {clients.map((client, idx) => (
-            <div className="client-brand" key={idx}>
-              <span className="client-name">{client}</span>
-            </div>
-          ))}
-        </Marquee>
+        <div className="marquee-wrapper">
+          <Marquee
+            gradient={true}
+            gradientColor={[250, 250, 250]}
+            gradientWidth={150}
+            speed={45}
+            pauseOnHover={true}
+            className="client-marquee"
+          >
+            {clients.map((client, idx) => (
+              <div className="client-brand-card" key={idx}>
+                <div className="client-brand-icon">
+                  <Building2 size={24} />
+                </div>
+                <span className="client-name">{client}</span>
+              </div>
+            ))}
+          </Marquee>
+        </div>
       </section>
 
       {/* 8. CTA Banner */}
