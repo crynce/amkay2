@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Target, Eye } from "lucide-react";
+import { Target, Eye, ZoomIn, ZoomOut, Maximize } from "lucide-react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import "./About.css";
 
 export default function About() {
@@ -100,93 +101,133 @@ export default function About() {
             <h2>Organization Structure</h2>
             <p>
               A streamlined hierarchy ensuring operational excellence across all
-              departments.
+              departments. You can drag to pan and use the controls to zoom.
             </p>
           </div>
 
           <div className="org-tree-wrapper">
-            <div className="tree">
-              <ul>
-                <li>
-                  <div className="node head-node">
-                    <strong>Organization Head</strong>
-                    <span>Mr. Kavinder Singh</span>
+            <TransformWrapper
+              initialScale={window.innerWidth < 768 ? 0.4 : 0.8}
+              minScale={0.2}
+              maxScale={2}
+              centerOnInit={true}
+              wheel={{ step: 0.1 }}
+            >
+              {({ zoomIn, zoomOut, resetTransform }) => (
+                <>
+                  <div className="zoom-controls">
+                    <button
+                      className="zoom-btn"
+                      onClick={() => zoomIn()}
+                      title="Zoom In"
+                    >
+                      <ZoomIn size={20} />
+                    </button>
+                    <button
+                      className="zoom-btn"
+                      onClick={() => zoomOut()}
+                      title="Zoom Out"
+                    >
+                      <ZoomOut size={20} />
+                    </button>
+                    <button
+                      className="zoom-btn"
+                      onClick={() => resetTransform()}
+                      title="Reset"
+                    >
+                      <Maximize size={20} />
+                    </button>
                   </div>
-                  <ul>
-                    <li>
-                      <div className="node dept-node">
-                        Sales &<br />
-                        Marketing
-                      </div>
-                    </li>
-                    <li>
-                      <div className="node dept-node">
-                        Design &<br />
-                        Development
-                      </div>
-                    </li>
-                    <li>
-                      <div className="node dept-node">
-                        Production &<br />
-                        Maintenance
-                      </div>
+                  <TransformComponent
+                    wrapperClass="zoom-wrapper"
+                    contentClass="zoom-content"
+                  >
+                    <div className="tree">
                       <ul>
                         <li>
-                          <div className="node sub-node">
-                            Production
-                            <br />
-                            Head
+                          <div className="node head-node">
+                            <strong>Organization Head</strong>
+                            <span>Mr. Kavinder Singh</span>
                           </div>
-                        </li>
-                        <li>
-                          <div className="node sub-node">
-                            Maintenance
-                            <br />
-                            Incharge
-                          </div>
-                        </li>
-                        <li>
-                          <div className="node sub-node">
-                            Store / Dispatch
-                            <br />
-                            Incharge
-                          </div>
+                          <ul>
+                            <li>
+                              <div className="node dept-node">
+                                Sales &<br />
+                                Marketing
+                              </div>
+                            </li>
+                            <li>
+                              <div className="node dept-node">
+                                Design &<br />
+                                Development
+                              </div>
+                            </li>
+                            <li>
+                              <div className="node dept-node">
+                                Production &<br />
+                                Maintenance
+                              </div>
+                              <ul>
+                                <li>
+                                  <div className="node sub-node">
+                                    Production
+                                    <br />
+                                    Head
+                                  </div>
+                                </li>
+                                <li>
+                                  <div className="node sub-node">
+                                    Maintenance
+                                    <br />
+                                    Incharge
+                                  </div>
+                                </li>
+                                <li>
+                                  <div className="node sub-node">
+                                    Store / Dispatch
+                                    <br />
+                                    Incharge
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div className="node dept-node">
+                                Quality &<br />
+                                HRD
+                              </div>
+                              <ul>
+                                <li>
+                                  <div className="node sub-node">
+                                    QA / Mgmt
+                                    <br />
+                                    Rep.
+                                  </div>
+                                </li>
+                                <li>
+                                  <div className="node sub-node">
+                                    HR
+                                    <br />
+                                    Incharge
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div className="node dept-node">
+                                Purchase
+                                <br />
+                                Incharge
+                              </div>
+                            </li>
+                          </ul>
                         </li>
                       </ul>
-                    </li>
-                    <li>
-                      <div className="node dept-node">
-                        Quality &<br />
-                        HRD
-                      </div>
-                      <ul>
-                        <li>
-                          <div className="node sub-node">
-                            QA / Mgmt
-                            <br />
-                            Rep.
-                          </div>
-                        </li>
-                        <li>
-                          <div className="node sub-node">
-                            HR
-                            <br />
-                            Incharge
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <div className="node dept-node">
-                        Purchase
-                        <br />
-                        Incharge
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+                    </div>
+                  </TransformComponent>
+                </>
+              )}
+            </TransformWrapper>
           </div>
         </div>
       </section>
