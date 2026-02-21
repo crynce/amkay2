@@ -34,7 +34,7 @@ export default function Navbar() {
     <header
       className={`navbar ${scrolled ? "scrolled" : ""}} navbar-dark-text`}
     >
-      <div className="container nav-container">
+      <div className=" nav-container">
         {/* Logo */}
         <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
           <span className="logo-text">AMKAY</span>
