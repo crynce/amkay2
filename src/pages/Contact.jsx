@@ -235,11 +235,11 @@ export default function Contact() {
       {/* Google Maps Embed */}
       <section className="map-section">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x390d3d3a01aaaaab%3A0x1bb1aaaaab!2sIMT%20Manesar%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          src="https://www.google.com/maps?q=28.4515641,76.9918864&output=embed"
           width="100%"
           height="450"
           style={{ border: 0, display: "block" }}
-          allowFullScreen=""
+          allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           title="Amkay Industries Location"
