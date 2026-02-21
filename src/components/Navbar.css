@@ -19,7 +19,7 @@
 .navbar.scrolled {
   top: 1rem;
   width: 92%;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.2rem;
   background: rgba(255, 255, 255, 0.85);
   box-shadow: var(--shadow-md);
   border: 1px solid rgba(200, 200, 200, 0.2);
